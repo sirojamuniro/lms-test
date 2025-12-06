@@ -7,6 +7,7 @@ import { seedUsers } from './seed-users';
 import { seedSchools } from './seed-schools';
 import { seedDummyUsers } from './seed-dummy-users';
 import { seedClasses } from './seed-classes';
+import { seedSubjects } from './seed-subjects';
 import { seedCoursesAndLessons } from './seed-courses';
 import { seedEnrollments } from './seed-enrollments';
 import { seedGrades } from './seed-grades';
@@ -27,6 +28,7 @@ async function runSeeds() {
         await seedSchools();
         await seedDummyUsers();
         await seedClasses();
+        await seedSubjects();
         await seedCoursesAndLessons();
         await seedEnrollments();
         await seedGrades();

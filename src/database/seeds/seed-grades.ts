@@ -21,8 +21,11 @@ export async function seedGrades() {
         // In real app, Course -> Subject relation needed.
         // Let's create dummy grades for this "course/subject"
 
-        // Use a fixed subjectId for testing
-        const subjectId = 1;
+        // Fetch a real subject for this student's class (if available) or any subject
+        // For simplicity, find the first subject
+        const subject = await AppDataSource.getRepository('Subject').findOne({ where: {} }) as any;
+        if (!subject) continue;
+        const subjectId = subject.id;
 
         // 1. Daily Grades (3 items)
         for (let i = 1; i <= 3; i++) {
